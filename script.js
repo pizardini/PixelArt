@@ -115,6 +115,12 @@ function carregarQuadro() {
   else {
     valor = 5;
   }
+  if (valor > 50) {
+    valor = 50
+  }
+  if (valor < 5) {
+    valor = 5
+  }
     const matriz = document.querySelector('#pixel-board');
     for (let i = 0; i < valor; i += 1) {
       const line = document.createElement('div');
