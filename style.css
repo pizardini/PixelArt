@@ -58,6 +58,10 @@ body {
   background-color: green;
 }
 
+#cor5 {
+  background-color: white;
+}
+
 #pixel-board {
   background-color: aliceblue;
   width: 212px;

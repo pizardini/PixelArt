@@ -76,7 +76,7 @@ function adicionarEventoCores() {
 function trocarCores() {
   const pegarCor = document.getElementsByClassName('color');
   pegarCor[0].style.backgroundColor = 'black';
-  for (let i = 1; i < pegarCor.length; i += 1) {
+  for (let i = 1; i < (pegarCor.length-1); i += 1) {
     pegarCor[i].style.backgroundColor = randomColor();
   }
   salvarCores();
