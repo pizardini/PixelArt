@@ -38,6 +38,10 @@ body {
   height: 50px;
 }
 
+.selected {
+  border: 5px solid orangered;
+}
+
 #cor1 {
   background-color: black;
 }
