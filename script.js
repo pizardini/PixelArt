@@ -49,6 +49,7 @@ function limparSelecionado() {
   document.getElementById('cor2').classList.remove('selected');
   document.getElementById('cor3').classList.remove('selected');
   document.getElementById('cor4').classList.remove('selected');
+  document.getElementById('cor5').classList.remove('selected');
 }
 
 function selecionarCor(event) {
