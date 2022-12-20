@@ -108,22 +108,7 @@ function pintarPixel(event) {
 }
 
 function gerarQuadro() {
-  const matriz = document.querySelector('#pixel-board');
-  for (let i = 0; i < 5; i += 1) {
-    const line = document.createElement('div');
-    line.className = 'linha';
-    for (let j = 0; j < 5; j += 1) {
-      const cell = document.createElement('div');
-      cell.className = 'pixel';
-      cell.addEventListener('click', pintarPixel);
-      line.appendChild(cell);
-    }
-    matriz.appendChild(line);
-  }
-}
 
-function gerarQuadro2() {
-  
   let valor = document.getElementById("board-size").value;
 
   const matriz = document.querySelector('#pixel-board');
@@ -138,6 +123,37 @@ function gerarQuadro2() {
     }
     matriz.appendChild(line);
   }
+}
+
+function gerarQuadro2() {
+  
+  limparDivs()
+
+  let valor = document.getElementById("board-size").value;
+
+  if (valor > 50) {
+    valor = 50
+  }
+  if (valor < 5) {
+    valor = 5
+  }
+
+  const matriz = document.querySelector('#pixel-board');
+  for (let i = 0; i < valor; i += 1) {
+    const line = document.createElement('div');
+    line.className = 'linha';
+    for (let j = 0; j < valor; j += 1) {
+      const cell = document.createElement('div');
+      cell.className = 'pixel';
+      cell.addEventListener('click', pintarPixel);
+      line.appendChild(cell);
+    }
+    matriz.appendChild(line);
+  }
+}
+
+function limparDivs() {
+  document.getElementById("pixel-board").textContent= '';
 }
 
 function limparCores() {
