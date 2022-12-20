@@ -25,6 +25,11 @@ function salvarPixels() {
   localStorage.setItem('pixelBoard', JSON.stringify(pixelsSalvos));
 }
 
+function salvarQuadro() {
+  const valor = document.getElementById("board-size").value;
+  localStorage.setItem('boardSize', valor)
+}
+
 /*
 function coresIniciaisRand() {
     let cores = document.getElementsByClassName("color");
@@ -100,6 +105,12 @@ function carregarPixels() {
     }
   }
 }
+let valorCarregado;
+function carregarQuadro() {
+  if (localStorage.getItem('boardSize') !== null) {
+    valorCarregado = localStorage.getItem('boardSize');
+  }
+}
 
 function pintarPixel(event) {
   const cor = document.getElementsByClassName('selected')[0].style.backgroundColor;
@@ -108,29 +119,13 @@ function pintarPixel(event) {
 }
 
 function gerarQuadro() {
-
-  let valor = document.getElementById("board-size").value;
-
-  const matriz = document.querySelector('#pixel-board');
-  for (let i = 0; i < valor; i += 1) {
-    const line = document.createElement('div');
-    line.className = 'linha';
-    for (let j = 0; j < valor; j += 1) {
-      const cell = document.createElement('div');
-      cell.className = 'pixel';
-      cell.addEventListener('click', pintarPixel);
-      line.appendChild(cell);
-    }
-    matriz.appendChild(line);
-  }
-}
-
-function gerarQuadro2() {
-  
   limparDivs()
-
   let valor = document.getElementById("board-size").value;
-
+  if (localStorage.getItem('boardSize') !== null) {
+    valor = valorCarregado;
+  }
+  
+  console.log(valor);
   if (valor > 50) {
     valor = 50
   }
@@ -167,5 +162,6 @@ function limparCores() {
 
 setarCores();
 adicionarEventoCores();
+carregarQuadro();
 gerarQuadro();
 carregarPixels();

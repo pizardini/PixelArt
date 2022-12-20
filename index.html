@@ -32,8 +32,8 @@
     <div id="options">
         <div class="listaB" id="button-random-color"><button onclick="trocarCores()">Cores aleatórias</button></div>
         <div id="tamanho">
-            <input id="board-size" value="5" type="number" min="1"></input>
-            <button id="generate-board" onclick ="gerarQuadro2()">Gerar Quadro</button>
+            <input id="board-size" value="" type="number" min="1"></input>
+            <button id="generate-board" onclick ="gerarQuadro(); salvarQuadro();">Gerar Quadro</button>
         </div>
         <div class="listaB" id="clear-board"><button onclick="limparCores()">Limpar</button></div>
     </div>
@@ -46,7 +46,7 @@
 <br>
 
 <!--<footer id="rodape">
-<strong>Trybe: Projeto Pixels Art</strong>
+<strong>Projeto Pixels Art</strong>
 <br>
 Desenvolvido por Pietro Zardini -->
 </footer>
