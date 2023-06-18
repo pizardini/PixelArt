@@ -1,5 +1,6 @@
 # Pixels Art
 
+Prévia:
 ![Prévia da página - Preview of the page](https://i.imgur.com/ntQp6Oy.png))
 
 ## :page_with_curl: About
